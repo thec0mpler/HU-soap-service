@@ -9,7 +9,7 @@ import java.io.IOException;
 /**
  * API to get the address or postcode.
  */
-class Api {
+public class Api {
     private static final String addressEndpoint = "https://www.postnl.nl/adres-zoeken/";
     private static final String postcodeEndpoint = "https://www.postnl.nl/postcode-zoeken/";
 
@@ -27,7 +27,7 @@ class Api {
         return elements;
     }
 
-    static AddressType getAddress(String postcode, int houseNumber, String addition) throws IOException {
+    public static AddressType getAddress(String postcode, int houseNumber, String addition) throws IOException {
         // Get page
         Elements addressElement = getResult(
                 addressEndpoint + "?postal-code=" + postcode + "&number=" + houseNumber + "&addition_value=" + addition
@@ -55,7 +55,7 @@ class Api {
         return address;
     }
 
-    static AddressType getPostcode(String street, int houseNumber, String addition, String place) throws IOException {
+    public static AddressType getPostcode(String street, int houseNumber, String addition, String place) throws IOException {
         // Get page
         Elements addressElement = getResult(
                 postcodeEndpoint + "?street=" + street + "&number=" + houseNumber + "&addition=" + addition + "&city=" + place
