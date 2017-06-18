@@ -141,12 +141,19 @@
          <houseNumber>201</houseNumber>\r
       </pos:searchAddress>\r
    </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://postcode.local/postcode.wsdl/PortType/searchAddressRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call id="90b9121b-f2d8-47f1-a992-0f09e3a48e26" name="hu-dl201-no_house_number-address"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/WebApp/services/address</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pos="http://postcode.local/postcode.request.xsd">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <pos:searchAddress>\r
+         <postcode>3584BJ</postcode>\r
+      </pos:searchAddress>\r
+   </soapenv:Body>\r
 </soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://postcode.local/postcode.wsdl/PortType/searchAddressRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="ca887944-67c5-42d5-bbea-4d7be94344bb" isOneWay="false" action="" name="searchPostcode" bindingOperationName="searchPostcode" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ea2f480d-af56-4ef7-833e-1a91431bc209" name="hu-dl200-postcode"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/WebApp/services/address</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pos="http://postcode.local/postcode.request.xsd">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <pos:searchPostcode>\r
          <street>Daltonlaan</street>\r
-         <houseNumber>200</houseNumber>\r
+         <houseNumber>2001</houseNumber>\r
          <addition></addition>\r
          <place>Utrecht</place>\r
       </pos:searchPostcode>\r
