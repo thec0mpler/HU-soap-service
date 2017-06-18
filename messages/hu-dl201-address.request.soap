@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pos="http://postcode.local/postcode.request.xsd">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <pos:searchAddress>
+         <postcode>3584BJ</postcode>
+         <houseNumber>201</houseNumber>
+      </pos:searchAddress>
+   </soapenv:Body>
+</soapenv:Envelope>

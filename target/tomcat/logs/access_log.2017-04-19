@@ -1,0 +1,4 @@
+127.0.0.1 - - [19/Apr/2017:19:27:30 +0200] "POST /WebApp/services/address HTTP/1.1" 200 425 http-bio-8080-exec-1 1271
+127.0.0.1 - - [19/Apr/2017:19:33:10 +0200] "GET /WebApp/services/address HTTP/1.1" 200 721 http-bio-8080-exec-1 39
+127.0.0.1 - - [19/Apr/2017:19:33:27 +0200] "GET /WebApp/services/address?wsdl HTTP/1.1" 200 1650 http-bio-8080-exec-2 3
+127.0.0.1 - - [19/Apr/2017:19:34:20 +0200] "GET /WebApp/services/address?wsdl=1 HTTP/1.1" 200 2471 http-bio-8080-exec-3 2

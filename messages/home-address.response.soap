@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+   <S:Body>
+      <ns3:address xmlns:ns2="http://postcode.local/postcode.request.xsd" xmlns:ns3="http://postcode.local/postcode.response.xsd">
+         <street>Notarisappelgaarde</street>
+         <houseNumber>42</houseNumber>
+         <addition/>
+         <postcode>3824AH</postcode>
+         <place>AMERSFOORT</place>
+      </ns3:address>
+   </S:Body>
+</S:Envelope>

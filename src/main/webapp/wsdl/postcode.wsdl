@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions
+        xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+        xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+        xmlns:srv="http://postcode.local/postcode.wsdl"
+        xmlns:request="http://postcode.local/postcode.request.xsd"
+        xmlns:response="http://postcode.local/postcode.response.xsd"
+        targetNamespace="http://postcode.local/postcode.wsdl">
+    <!-- Types -->
+    <wsdl:types/>
+
+    <!-- Messages -->
+    <wsdl:message name="searchAddressRequest">
+        <wsdl:part name="request" element="request:searchAddress"/>
+    </wsdl:message>
+    <wsdl:message name="searchAddressResponse">
+        <wsdl:part name="response" element="response:address"/>
+    </wsdl:message>
+
+    <wsdl:message name="searchPostcodeRequest">
+        <wsdl:part name="request" element="request:searchPostcode"/>
+    </wsdl:message>
+    <wsdl:message name="searchPostcodeResponse">
+        <wsdl:part name="response" element="response:address"/>
+    </wsdl:message>
+
+    <wsdl:message name="inputFault">
+        <wsdl:part name="fault" element="response:inputFault"/>
+    </wsdl:message>
+
+    <!-- Port types -->
+    <wsdl:portType name="PortType">
+        <wsdl:operation name="searchAddress">
+            <wsdl:input message="srv:searchAddressRequest"/>
+            <wsdl:output message="srv:searchAddressResponse"/>
+            <wsdl:fault name="fault" message="srv:inputFault" />
+        </wsdl:operation>
+
+        <wsdl:operation name="searchPostcode">
+            <wsdl:input message="srv:searchPostcodeRequest"/>
+            <wsdl:output message="srv:searchPostcodeResponse"/>
+            <wsdl:fault name="fault" message="srv:inputFault" />
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <!-- Bindings -->
+    <wsdl:binding name="BindingType" type="srv:PortType">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+        <wsdl:operation name="searchAddress">
+            <soap:operation style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault name="fault" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+
+        <wsdl:operation name="searchPostcode">
+            <soap:operation style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault name="fault" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <!-- Service -->
+    <wsdl:service name="addressService">
+        <wsdl:port name="PortType" binding="srv:BindingType">
+            <soap:address location="http://localhost:8080/WebApp/services/address"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,11 @@
+postcode\InputFault_Exception.class
+postcode\AddressService.class
+postcode\ObjectFactory.class
+postcode\package-info.class
+postcode\Api.class
+postcode\SearchPostcodeType.class
+postcode\AddressType.class
+postcode\SearchAddressType.class
+postcode\PostcodeImpl.class
+postcode\InputFault.class
+postcode\PortType.class

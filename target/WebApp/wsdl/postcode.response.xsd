@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:address="http://postcode.local/postcode.schema.xsd"
+           targetNamespace="http://postcode.local/postcode.response.xsd">
+    <xs:annotation>
+        <xs:appinfo>Address search response</xs:appinfo>
+        <xs:documentation>
+            Response with a address.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:element name="address" type="address:addressType"/>
+
+    <xs:annotation>
+        <xs:appinfo>Address fault response</xs:appinfo>
+        <xs:documentation>
+            Fault response if there was a error.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:element name="inputFault" type="address:inputFault"/>
+</xs:schema>

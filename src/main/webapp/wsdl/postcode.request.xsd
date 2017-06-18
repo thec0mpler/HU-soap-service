@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:address="http://postcode.local/postcode.schema.xsd"
+           targetNamespace="http://postcode.local/postcode.request.xsd">
+    <xs:annotation>
+        <xs:appinfo>Address search request</xs:appinfo>
+        <xs:documentation>
+            Request to search an address by postcode and house number.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:element name="searchAddress" type="address:searchAddressType"/>
+
+    <xs:annotation>
+        <xs:appinfo>Postcode search request</xs:appinfo>
+        <xs:documentation>
+            Request to search a post by street, house number and place.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:element name="searchPostcode" type="address:searchPostcodeType"/>
+</xs:schema>

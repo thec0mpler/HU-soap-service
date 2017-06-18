@@ -1,0 +1,81 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.hu.webapp</groupId>
+    <artifactId>WebApp</artifactId>
+    <packaging>war</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>WebApp Maven Webapp</name>
+    <url>http://maven.apache.org</url>
+    <dependencies>
+        <dependency>
+            <groupId>com.sun.xml.ws</groupId>
+            <artifactId>jaxws-rt</artifactId>
+            <version>2.2.8</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.10.2</version>
+        </dependency>
+    </dependencies>
+    <build>
+        <finalName>WebApp</finalName>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <url>http://localhost:8080</url>
+                    <server>WebApp</server>
+                    <path>/WebApp</path>
+                    <username>tomcat</username>
+                    <password>tomcat</password>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.jvnet.jax-ws-commons</groupId>
+                <artifactId>jaxws-maven-plugin</artifactId>
+                <version>2.3</version>
+                <executions>
+                    <execution>
+                        <id>wsimport-from-jdk</id>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                    </execution>
+                </executions>
+                <configuration>
+                    <!-- WSDL -->
+                    <wsdlDirectory>src/main/webapp/wsdl</wsdlDirectory>
+                    <wsdlFiles>
+                        <wsdlFile>postcode.wsdl</wsdlFile>
+                    </wsdlFiles>
+
+                    <!-- Bindings -->
+                    <bindingDirectory>${basedir}/src/main/webapp/wsdl</bindingDirectory>
+                    <bindingFiles>
+                        <bindingFile>postcode.schema.xsd</bindingFile>
+                        <bindingFile>postcode.request.xsd</bindingFile>
+                        <bindingFile>postcode.response.xsd</bindingFile>
+                    </bindingFiles>
+
+                    <!-- Keep generated files -->
+                    <keep>true</keep>
+
+                    <!-- Package name -->
+                    <packageName>postcode</packageName>
+
+                    <!-- Workaround (for a lot of problems)  -->
+                    <vmArgs>
+                        <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                    </vmArgs>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:address="http://postcode.local/postcode.schema.xsd"
+           targetNamespace="http://postcode.local/postcode.schema.xsd">
+    <xs:annotation>
+        <xs:appinfo>Street element</xs:appinfo>
+        <xs:documentation>
+            A string element for the street name.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:simpleType name="street">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+
+    <xs:annotation>
+        <xs:appinfo>Postcode element</xs:appinfo>
+        <xs:documentation>
+            A postcode element that starts with 1-9 followed by 3 numbers from 0 to 9 and then 2 letters (Dutch format).
+        </xs:documentation>
+    </xs:annotation>
+    <xs:simpleType name="postcode">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[1-9][0-9]{3}[A-Z]{2}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:annotation>
+        <xs:appinfo>House number element</xs:appinfo>
+        <xs:documentation>
+            House number element for every positive number between 1 and 9999.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:simpleType name="houseNumber">
+        <xs:restriction base="xs:positiveInteger">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="99999"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:annotation>
+        <xs:appinfo>House number addition element</xs:appinfo>
+        <xs:documentation>
+            House number addition element for after the house number (typical a Dutch thing).
+
+            Could only be letters, but for simplicity a string of max 5 length.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:simpleType name="addition">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="5"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:annotation>
+        <xs:appinfo>Place element</xs:appinfo>
+        <xs:documentation>
+            Place element as string.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:simpleType name="place">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+
+    <xs:annotation>
+        <xs:appinfo>Address search type</xs:appinfo>
+        <xs:documentation>
+            This element needs to be send for requesting an address.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:complexType name="searchAddressType">
+        <xs:sequence>
+            <xs:element name="postcode" type="address:postcode"/>
+            <xs:element name="houseNumber" type="address:houseNumber"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:annotation>
+        <xs:appinfo>Postcode search type</xs:appinfo>
+        <xs:documentation>
+            This element needs to be send for requesting an postcode.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:complexType name="searchPostcodeType">
+        <xs:sequence>
+            <xs:element name="street" type="address:street"/>
+            <xs:element name="houseNumber" type="address:houseNumber"/>
+            <xs:element name="addition" type="address:addition"/>
+            <xs:element name="place" type="address:place"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:annotation>
+        <xs:appinfo>Address type</xs:appinfo>
+        <xs:documentation>
+            Response element send for every request.
+
+            Same response for every request to keep it simple.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:complexType name="addressType">
+        <xs:sequence>
+            <xs:element name="street" type="address:street"/>
+            <xs:element name="houseNumber" type="address:houseNumber"/>
+            <xs:element name="addition" type="address:addition"/>
+            <xs:element name="postcode" type="address:postcode"/>
+            <xs:element name="place" type="address:place"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:annotation>
+        <xs:appinfo>Input fault</xs:appinfo>
+        <xs:documentation>
+            Input fault element/response if there is an error.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:complexType name="inputFault">
+        <xs:sequence>
+            <xs:element name="errorCode" type="xs:short" nillable="false"/>
+            <xs:element name="message" type="xs:string" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
