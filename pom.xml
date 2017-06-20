@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.hu.webapp</groupId>
-    <artifactId>WebApp</artifactId>
+    <groupId>com.hu.soap-service</groupId>
+    <artifactId>HU-soap-service</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>WebApp Maven Webapp</name>
+    <name>HU-soap-service</name>
     <url>http://maven.apache.org</url>
     <dependencies>
         <dependency>
@@ -26,7 +26,7 @@
         </dependency>
     </dependencies>
     <build>
-        <finalName>WebApp</finalName>
+        <finalName>HU-soap-service</finalName>
 
         <plugins>
             <plugin>
@@ -35,8 +35,8 @@
                 <version>2.2</version>
                 <configuration>
                     <url>http://localhost:8080</url>
-                    <server>WebApp</server>
-                    <path>/WebApp</path>
+                    <server>HU-soap-service</server>
+                    <path>/hu-soap-service</path>
                     <username>tomcat</username>
                     <password>tomcat</password>
                 </configuration>

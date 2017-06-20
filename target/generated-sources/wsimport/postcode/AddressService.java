@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "addressService", targetNamespace = "http://postcode.local/postcode.wsdl", wsdlLocation = "file:/D:/Development/WebApp/src/main/webapp/wsdl/postcode.wsdl")
+@WebServiceClient(name = "addressService", targetNamespace = "http://postcode.local/postcode.wsdl", wsdlLocation = "file:/D:/Development/HU-soap-service/src/main/webapp/wsdl/postcode.wsdl")
 public class AddressService
     extends Service
 {
@@ -30,7 +30,7 @@ public class AddressService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("file:/D:/Development/WebApp/src/main/webapp/wsdl/postcode.wsdl");
+            url = new URL("file:/D:/Development/HU-soap-service/src/main/webapp/wsdl/postcode.wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

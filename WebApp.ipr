@@ -13,12 +13,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="HU-soap-service" />
         <module name="WebApp" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="HU-soap-service" target="1.5" />
       <module name="WebApp" target="1.5" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
   </component>
   <component name="ExportToHTMLSettings">
     <option name="PRINT_LINE_NUMBERS" value="false" />
@@ -209,7 +214,7 @@
   </component>
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/WebApp.iml" filepath="$PROJECT_DIR$/WebApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HU-soap-service.iml" filepath="$PROJECT_DIR$/HU-soap-service.iml" />
     </modules>
   </component>
   <component name="ProjectRootManager" version="2" project-jdk-name="1.8" project-jdk-type="JavaSDK" />

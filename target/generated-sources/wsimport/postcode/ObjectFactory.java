@@ -25,8 +25,8 @@ import javax.xml.namespace.QName;
 public class ObjectFactory {
 
     private final static QName _Address_QNAME = new QName("http://postcode.local/postcode.response.xsd", "address");
-    private final static QName _SearchPostcode_QNAME = new QName("http://postcode.local/postcode.request.xsd", "searchPostcode");
     private final static QName _InputFault_QNAME = new QName("http://postcode.local/postcode.response.xsd", "inputFault");
+    private final static QName _SearchPostcode_QNAME = new QName("http://postcode.local/postcode.request.xsd", "searchPostcode");
     private final static QName _SearchAddress_QNAME = new QName("http://postcode.local/postcode.request.xsd", "searchAddress");
 
     /**
@@ -34,22 +34,6 @@ public class ObjectFactory {
      * 
      */
     public ObjectFactory() {
-    }
-
-    /**
-     * Create an instance of {@link SearchAddressType }
-     * 
-     */
-    public SearchAddressType createSearchAddressType() {
-        return new SearchAddressType();
-    }
-
-    /**
-     * Create an instance of {@link SearchPostcodeType }
-     * 
-     */
-    public SearchPostcodeType createSearchPostcodeType() {
-        return new SearchPostcodeType();
     }
 
     /**
@@ -69,6 +53,22 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link SearchAddressType }
+     * 
+     */
+    public SearchAddressType createSearchAddressType() {
+        return new SearchAddressType();
+    }
+
+    /**
+     * Create an instance of {@link SearchPostcodeType }
+     * 
+     */
+    public SearchPostcodeType createSearchPostcodeType() {
+        return new SearchPostcodeType();
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link AddressType }{@code >}}
      * 
      */
@@ -78,21 +78,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SearchPostcodeType }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://postcode.local/postcode.request.xsd", name = "searchPostcode")
-    public JAXBElement<SearchPostcodeType> createSearchPostcode(SearchPostcodeType value) {
-        return new JAXBElement<SearchPostcodeType>(_SearchPostcode_QNAME, SearchPostcodeType.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link InputFault }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://postcode.local/postcode.response.xsd", name = "inputFault")
     public JAXBElement<InputFault> createInputFault(InputFault value) {
         return new JAXBElement<InputFault>(_InputFault_QNAME, InputFault.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SearchPostcodeType }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://postcode.local/postcode.request.xsd", name = "searchPostcode")
+    public JAXBElement<SearchPostcodeType> createSearchPostcode(SearchPostcodeType value) {
+        return new JAXBElement<SearchPostcodeType>(_SearchPostcode_QNAME, SearchPostcodeType.class, null, value);
     }
 
     /**
